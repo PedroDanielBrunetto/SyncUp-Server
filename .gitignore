@@ -1,0 +1,19 @@
+# Arquivos de log
+logs
+*.log
+
+# Arquivos temporários
+tmp
+*.tmp
+
+# Módulos Node.js
+node_modules
+
+# Arquivos de ambiente
+.env
+
+# Arquivos de build
+build
+
+# Arquivos de configuração locais
+config/local.json
