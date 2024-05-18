@@ -1,6 +1,6 @@
 const pool = require("../../Infra/Connection");
 
-const Ideas = (req, res) => {
+const Ideas = async (req, res) => {
   const { name, email, cel, idea } = req.body;
 
   console.log('Registrando nova ideia com os seguintes dados:', { name, email, cel, idea });
@@ -11,7 +11,7 @@ const Ideas = (req, res) => {
       VALUES (?, ?, ?, ?)
     `;
 
-    pool.query(registerIdea, [name, email, cel, idea], (error, results) => {
+    await pool.query(registerIdea, [name, email, cel, idea], (error, results) => {
       if (error) {
         console.error('Erro ao registrar a ideia:', error.stack);
         return res.status(500).json({ error: 'Erro interno do servidor' });
