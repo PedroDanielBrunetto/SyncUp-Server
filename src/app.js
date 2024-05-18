@@ -1,7 +1,7 @@
 require('dotenv').config();
 const express = require('express');
 const app = express();
-const Ideas = require('./Services/Ideas.js')
+const Ideas = require('./Services/Ideas.js');
 
 // Middleware para processar dados do corpo da requisição
 app.use(express.json());

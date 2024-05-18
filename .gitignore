@@ -6,6 +6,9 @@ logs
 tmp
 *.tmp
 
+dist
+*.dist
+
 # Módulos Node.js
 node_modules
 
@@ -17,3 +20,4 @@ build
 
 # Arquivos de configuração locais
 config/local.json
+.vercel

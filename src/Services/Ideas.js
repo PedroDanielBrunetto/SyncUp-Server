@@ -1,4 +1,4 @@
-const db = require("../Infra/Connection");
+const db = require("../../Infra/Connection");
 
 const Ideas = async (req, res) => {
   const { name, email, cel, idea } = req.body;
