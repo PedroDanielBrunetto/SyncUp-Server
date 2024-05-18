@@ -11,7 +11,7 @@ app.use(express.json());
 
 // Middleware do CORS com as configurações apropriadas
 app.use(cors({
-  origin: ['http://localhost:3000', 'https://syncupbrasil.tech'],
+  origin: [process.env.ORIGIN_ONE, process.env.ORIGIN_TWO, process.env.ORIGIN_THREE],
   methods: ['GET', 'POST'],
   allowedHeaders: ['Content-Type', 'Authorization'],
 }));
