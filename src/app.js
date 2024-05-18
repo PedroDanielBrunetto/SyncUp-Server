@@ -1,5 +1,6 @@
 require('dotenv').config();
 const express = require('express');
+const cors = require('cors'); // Importe o pacote cors
 const app = express();
 const Ideas = require('./Services/Ideas');
 const { ContactMe } = require('./Services/ContactMe');
@@ -8,7 +9,14 @@ const pool = require('../Infra/Connection');
 // Middleware para processar dados do corpo da requisição
 app.use(express.json());
 
-const port = process.env.PORT || 3000;
+// Middleware do CORS com as configurações apropriadas
+app.use(cors({
+  origin: ['http://localhost:3000', 'https://www.syncupbrasil.tech'],
+  methods: ['GET', 'POST'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+}));
+
+const port = process.env.PORT || 8000;
 const url = process.env.URL || 'http://localhost';
 
 pool.getConnection((err, connection) => {
